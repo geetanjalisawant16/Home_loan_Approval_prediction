@@ -1,7 +1,6 @@
-
 # House Price Prediction using Machine Learning
 
-This project demonstrates the use of machine learning to predict house prices based on various features like the applicant's income, credit history, and more. The model used for prediction is a RandomForestClassifier, which is trained on historical data and then used to predict house prices on unseen data.
+This project demonstrates the use of machine learning to predict house prices based on various features like the applicant's income, credit history, and more. The model used for prediction is a **RandomForestClassifier**, which is trained on historical data and then used to predict house prices on unseen data.
 
 ## Table of Contents
 
@@ -10,12 +9,14 @@ This project demonstrates the use of machine learning to predict house prices ba
 3. [Data](#data)
 4. [Model Training](#model-training)
 5. [Prediction and Results](#prediction-and-results)
-6. [Evaluation](#evaluation)
-7. [License](#license)
+6. [Model Comparison](#model-comparison)
+7. [Feature Importance](#feature-importance)
+8. [Evaluation](#evaluation)
+9. [License](#license)
 
 ## Project Overview
 
-The goal of this project is to predict whether a loan will be approved based on various applicant features. The model uses a Random Forest Classifier algorithm to predict if a loan is approved or not.
+The goal of this project is to predict whether a loan will be approved based on various applicant features. The model uses a **RandomForestClassifier** algorithm to predict if a loan is approved or not.
 
 ### Key Features:
 - **Loan_ID**: Unique identifier for each loan
@@ -83,6 +84,47 @@ df_test.head()
 ```
 
 This will add a new `Prediction` column to the test dataset, where the model predicts whether the loan is approved or rejected (1 or 0).
+
+## Model Comparison
+
+Here is a comparison of different machine learning models based on several performance metrics:
+
+### DecisionTreeClassifier:
+- **Recall Score**: 0.807
+- **F1 Score**: 0.865
+- **Precision Score**: 0.931
+- **Accuracy Score**: 0.876
+
+### RandomForestClassifier:
+- **Recall Score**: 0.940
+- **F1 Score**: 0.918
+- **Precision Score**: 0.897
+- **Accuracy Score**: 0.917
+
+### KNeighborsClassifier:
+- **Recall Score**: 0.639
+- **F1 Score**: 0.631
+- **Precision Score**: 0.624
+- **Accuracy Score**: 0.633
+
+### SVC (Support Vector Classifier):
+- **Recall Score**: 0.627
+- **F1 Score**: 0.568
+- **Precision Score**: 0.520
+- **Accuracy Score**: 0.533
+
+### AdaBoostClassifier:
+- **Recall Score**: 0.843
+- **F1 Score**: 0.749
+- **Precision Score**: 0.673
+- **Accuracy Score**: 0.722
+
+### Conclusion:
+Based on these comparisons, **RandomForestClassifier** was chosen as the best model due to its high recall, precision, F1 score, and overall accuracy.
+
+## Feature Importance
+
+Feature importance refers to techniques that calculate a score for all input features for a given model. These scores represent the "importance" of each feature, meaning that a higher score indicates that the feature has a greater effect on the model's predictions. In the case of RandomForest, this information can be useful for understanding the most influential factors in predicting house prices.
 
 ## Evaluation
 
